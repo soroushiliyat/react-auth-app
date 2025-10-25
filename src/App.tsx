@@ -5,10 +5,10 @@ import ProtectedPage from "./components/ProtectedPage";
 function App() {
   return (
     <div>
-      <h1>ثبت‌نام</h1>
+      <h1>Sign Up</h1>
       <SignupForm />
       <hr />
-      <h1>ورود</h1>
+      <h1>Login</h1>
       <LoginForm />
       <hr />
       <ProtectedPage />
