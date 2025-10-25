@@ -20,7 +20,9 @@ export async function sendLoginData(values) {
 }
 
 
-/*import axios from "axios";
+/*
+
+import axios from "axios";
 
 export const sendSignupData = async (data: { name: string; email: string; password: string }) => {
   const response = await axios.post("https://api.example.com/signup", data);
