@@ -1,3 +1,4 @@
+
 export async function sendSignupData(values) {
   const response = await fetch("https://reqres.in/api/register", {
     method: "POST",
@@ -17,3 +18,16 @@ export async function sendLoginData(values) {
   if (!response.ok) throw new Error("Login failed");
   return await response.json();
 }
+
+
+/*import axios from "axios";
+
+export const sendSignupData = async (data: { name: string; email: string; password: string }) => {
+  const response = await axios.post("https://api.example.com/signup", data);
+  return response.data;
+};
+
+export const sendLoginData = async (data: { email: string; password: string }) => {
+  const response = await axios.post("https://api.example.com/login", data);
+  return response.data;
+};
