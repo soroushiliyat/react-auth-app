@@ -1,9 +1,9 @@
-interface LoginValues {
+export interface LoginValues {
   email: string;
   password: string;
 }
 
-interface SignupValues {
+export interface SignupValues {
   name: string;
   email: string;
   password: string;
