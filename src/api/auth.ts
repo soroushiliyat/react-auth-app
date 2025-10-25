@@ -1,4 +1,15 @@
-export async function sendSignupData(values) {
+interface LoginValues {
+  email: string;
+  password: string;
+}
+
+interface SignupValues {
+  name: string;
+  email: string;
+  password: string;
+}
+
+export async function sendSignupData(values: SignupValues) {
   const response = await fetch("https://reqres.in/api/register", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -8,7 +19,7 @@ export async function sendSignupData(values) {
   return await response.json();
 }
 
-export async function sendLoginData(values) {
+export async function sendLoginData(values: LoginValues) {
   const response = await fetch("https://reqres.in/api/login", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
