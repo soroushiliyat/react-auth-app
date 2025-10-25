@@ -17,8 +17,8 @@ const LoginForm = () => {
   };
 
   const validationSchema = Yup.object({
-    email: Yup.string().email("ایمیل معتبر نیست").required("ایمیل الزامی است"),
-    password: Yup.string().min(6, "حداقل ۶ کاراکتر").required("رمز عبور الزامی است"),
+    email: Yup.string().email("Invalid email").required("Email is required"),
+    password: Yup.string().min(6, "Minimum 6 characters").required("Password is required"),
   });
 
   return (
@@ -29,22 +29,22 @@ const LoginForm = () => {
         try {
           const result = await sendLoginData(values);
           setUser(result.user);
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+          // eslint-disable-next-line @typescript-eslint/no-unused-vars
         } catch (err) {
-          alert("ورود ناموفق بود");
+          alert("Login failed");
         } finally {
           setSubmitting(false);
         }
       }}
     >
       <Form>
-        <Field name="email" placeholder="ایمیل" />
+        <Field name="email" placeholder="Email" />
         <ErrorMessage name="email" component="div" />
 
-        <Field name="password" type="password" placeholder="رمز عبور" />
+        <Field name="password" type="password" placeholder="Password" />
         <ErrorMessage name="password" component="div" />
 
-        <button type="submit">ورود</button>
+        <button type="submit">Login</button>
       </Form>
     </Formik>
   );
